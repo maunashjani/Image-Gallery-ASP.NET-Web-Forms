@@ -34,7 +34,7 @@
             <div class="row">
 
                 <div class="text-center col-md-12">
-                    <h1>Gallery</h1>
+                    <h1>Gallery With Pagination</h1>
                 </div>
 
                 <!-- list-group Start -->
