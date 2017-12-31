@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddImage.aspx" />
+    <Content Include="GalleryWithPagination.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="GalleryWithFilter.aspx.designer.cs">
       <DependentUpon>GalleryWithFilter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GalleryWithPagination.aspx.cs">
+      <DependentUpon>GalleryWithPagination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GalleryWithPagination.aspx.designer.cs">
+      <DependentUpon>GalleryWithPagination.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
