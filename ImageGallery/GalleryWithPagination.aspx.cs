@@ -17,16 +17,14 @@ namespace ImageGallery
             for (int i = 1; i <= CountTotalRows(); i++)
             {
                 //NumberedLinkButton
-                LinkButton btn = new LinkButton();
-                btn.ID = "btn" + i;
-                btn.Text = i.ToString();
-                btn.Click += new EventHandler(btn_Click);
+                LinkButton lbtn = new LinkButton();
+                lbtn.ID = "btn" + i;
+                lbtn.Text = i.ToString();
+                lbtn.Click += new EventHandler(lbtn_Click);
 
                 this.Panel1.Controls.Add(new LiteralControl("<li>"));
 
-                //this.Panel1.Controls.Add(btn);
-
-                this.Panel1.Controls.Add(;
+                this.Panel1.Controls.Add(lbtn);
 
                 this.Panel1.Controls.Add(new LiteralControl("</li>"));
             }
@@ -39,11 +37,11 @@ namespace ImageGallery
             }
         }
 
-        protected void btn_Click(object sender, EventArgs e)
+        protected void lbtn_Click(object sender, EventArgs e)
         {
-            LinkButton btn = (LinkButton)sender;
+            LinkButton lbtn = (LinkButton)sender;
 
-            LoadImages(Convert.ToInt32(btn.Text));
+            LoadImages(Convert.ToInt32(lbtn.Text));
         }
 
 
