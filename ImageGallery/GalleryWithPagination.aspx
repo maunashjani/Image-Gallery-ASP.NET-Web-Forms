@@ -28,6 +28,9 @@
 <body>
     <form id="form1" runat="server">
 
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+        </asp:ScriptManager>
+
         <!-- Gallery Start -->
 
         <div class="container">
@@ -42,6 +45,17 @@
                     <asp:Literal ID="Literal1" runat="server"></asp:Literal>
                 </div>
                 <!-- list-group End -->
+
+                <!-- Pagination Start -->
+                <div class="col-md-12 text-center">
+                    <nav>
+                        <ul class='pagination'>
+                            <asp:Placeholder ID="Panel1" runat="server"></asp:Placeholder>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Pagination End -->
+
             </div>
         </div>
         <!-- Gallery End -->

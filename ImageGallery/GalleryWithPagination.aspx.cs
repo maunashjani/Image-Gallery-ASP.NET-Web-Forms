@@ -12,14 +12,72 @@ namespace ImageGallery
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            #region Pagination
+
+            for (int i = 1; i <= CountTotalRows(); i++)
+            {
+                //NumberedLinkButton
+                LinkButton btn = new LinkButton();
+                btn.ID = "btn" + i;
+                btn.Text = i.ToString();
+                btn.Click += new EventHandler(btn_Click);
+
+                this.Panel1.Controls.Add(new LiteralControl("<li>"));
+
+                //this.Panel1.Controls.Add(btn);
+
+                this.Panel1.Controls.Add(;
+
+                this.Panel1.Controls.Add(new LiteralControl("</li>"));
+            }
+
+            #endregion
+
+            if (!IsPostBack)
+            {
+                LoadImages(1);
+            }
+        }
+
+        protected void btn_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+
+            LoadImages(Convert.ToInt32(btn.Text));
+        }
+
+
+
+        private int CountTotalRows()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = "Data Source=.\\SQLEXPRESS; Initial Catalog=SampleDB; Integrated Security=True;";
+
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT count(*) FROM dbo.Images", con);
+
+            int rows = Convert.ToInt32(cmd.ExecuteScalar());
+
+            rows = rows / 5;
+
+            return rows;
+        }
+
+        private void LoadImages(int pn)
+        {
+            int PageNumber = pn;
+            int PageSize = 5;
 
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=.\\SQLEXPRESS; Initial Catalog=SampleDB; Integrated Security=True;";
 
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("select * from Images", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.Images ORDER BY ImageID OFFSET " + PageSize + " * (" + PageNumber + " - 1) ROWS FETCH NEXT " + PageSize + " ROWS ONLY OPTION (RECOMPILE);", con);
             SqlDataReader dr = cmd.ExecuteReader();
+
+            Literal1.Text = "";
 
             while (dr.Read())
             {
