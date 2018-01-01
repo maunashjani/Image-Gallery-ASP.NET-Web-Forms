@@ -12,8 +12,6 @@ namespace ImageGallery
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            #region Pagination
-
             for (int i = 1; i <= CountTotalRows(); i++)
             {
                 //NumberedLinkButton
@@ -28,9 +26,7 @@ namespace ImageGallery
 
                 this.Panel1.Controls.Add(new LiteralControl("</li>"));
             }
-
-            #endregion
-
+            
             if (!IsPostBack)
             {
                 LoadImages(1);
@@ -49,6 +45,7 @@ namespace ImageGallery
         private int CountTotalRows()
         {
             SqlConnection con = new SqlConnection();
+
             con.ConnectionString = "Data Source=.\\SQLEXPRESS; Initial Catalog=SampleDB; Integrated Security=True;";
 
             con.Open();
@@ -57,7 +54,13 @@ namespace ImageGallery
 
             int rows = Convert.ToInt32(cmd.ExecuteScalar());
 
-            rows = rows / 5;
+            Decimal d = Decimal.Divide(rows, 5);
+
+            rows = (int)Math.Ceiling(d);
+
+            cmd.Dispose();
+
+            con.Close();
 
             return rows;
         }
