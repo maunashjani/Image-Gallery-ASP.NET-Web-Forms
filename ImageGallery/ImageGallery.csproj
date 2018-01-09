@@ -67,7 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddImage.aspx" />
-    <Content Include="GalleryWithPagination.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -77,10 +76,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GalleryDemo.aspx" />
-    <Content Include="Gallery.aspx" />
-    <Content Include="GalleryWithFilterDemo.aspx" />
-    <Content Include="GalleryWithFilter.aspx" />
     <Content Include="plugins\fancybox\jquery.fancybox.min.css" />
     <Content Include="plugins\fancybox\jquery.fancybox.min.js" />
     <Content Include="Web.config" />
@@ -92,41 +87,6 @@
     </Compile>
     <Compile Include="AddImage.aspx.designer.cs">
       <DependentUpon>AddImage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GalleryDemo.aspx.cs">
-      <DependentUpon>GalleryDemo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GalleryDemo.aspx.designer.cs">
-      <DependentUpon>GalleryDemo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Gallery.aspx.cs">
-      <DependentUpon>Gallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Gallery.aspx.designer.cs">
-      <DependentUpon>Gallery.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GalleryWithFilterDemo.aspx.cs">
-      <DependentUpon>GalleryWithFilterDemo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GalleryWithFilterDemo.aspx.designer.cs">
-      <DependentUpon>GalleryWithFilterDemo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GalleryWithFilter.aspx.cs">
-      <DependentUpon>GalleryWithFilter.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GalleryWithFilter.aspx.designer.cs">
-      <DependentUpon>GalleryWithFilter.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GalleryWithPagination.aspx.cs">
-      <DependentUpon>GalleryWithPagination.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GalleryWithPagination.aspx.designer.cs">
-      <DependentUpon>GalleryWithPagination.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
