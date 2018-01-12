@@ -11,11 +11,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function successalert() {
-            swal({
-                title: 'Add Image!',
-                text: 'Image Added Successfully.',
-                type: 'success'
-            }).then(() => {
+            swal("Add Image!","Image Added Successfully.","success").then(() => {
                 window.location.href = "Gallery.aspx";
             });
 
